@@ -1,7 +1,10 @@
 % Copyright 2014 - Joseph Lisee <jlisee@gmail.com>
 
-\documentclass[11pt,a4paper,sans]{moderncv}
+{# Hack needed to get braces #}
+{% set lb = '{' %}
+{% set rb = '}' %}
 
+\documentclass[11pt,a4paper,sans]{moderncv}
 
 \moderncvstyle{casual}
 \moderncvcolor{red}
@@ -22,26 +25,26 @@
 %\setlength{\makecvtitlenamewidth}{10cm}
 
 % personal data
-\name{John}{Doe}
+\name{{personal.name.first|br}}{{personal.name.last|br}}
 % optional title
-\title{Resume title}
+%\title{Resume title}
 
-\address{street and number}{postcode city}{country}
-\phone[mobile]{+1~(234)~567~890}
-\phone[fixed]{+2~(345)~678~901}
-\phone[fax]{+3~(456)~789~012}
-\email{john@doe.org}
-\homepage{www.johndoe.com}
+%\address{street and number}{postcode city}{country}
+%\phone[mobile]{+1~(234)~567~890}
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+\email{{personal.email|br}}
+\homepage{{personal.homepage|br}}
 % Optional social info
-\social[linkedin]{john.doe}
-\social[twitter]{jdoe}
-\social[github]{jdoe}
+%\social[linkedin]{john.doe}
+%\social[twitter]{jdoe}
+%\social[github]{jdoe}
 % Optional extra info
-\extrainfo{additional information}
+%\extrainfo{additional information}
 % First is picture height second if frame width
-\photo[64pt][0.4pt]{{personal.portrait|stripext|brace}}
+\photo[64pt][0.4pt]{{personal.portrait|stripext|br}}
 % Optional quote line
-\quote{Some quote}
+%\quote{Some quote}
 
 % to show numerical labels in the bibliography (default is to show no % labels); only useful if you make citations in your resume
 %\makeatletter
@@ -62,8 +65,11 @@
 \makecvtitle
 
 \section{Education}
-\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description} % arguments 3 to 6 can be left empty
-\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+{% for deg in education %}
+\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location|br}}{\textit{{deg.gpa|br}}}{}
+{% endfor %}
+
+% No {Description} at the end of education
 
 %% \section{Master thesis}
 %% \cvitem{title}{\emph{Title}}
@@ -71,37 +77,36 @@
 %% \cvitem{description}{Short thesis abstract}
 
 \section{Experience}
-\subsection{Vocational}
-\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
-Detailed achievements:%
-\begin{itemize}%
-\item Achievement 1;
-\item Achievement 2, with sub-achievements:
-  \begin{itemize}%
-  \item Sub-achievement (a);
-  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
-    \begin{itemize}
-    \item Sub-sub-achievement i;
-    \item Sub-sub-achievement ii;
-    \item Sub-sub-achievement iii;
-    \end{itemize}
-  \item Sub-achievement (c);
-  \end{itemize}
-\item Achievement 3.
+{% for group in experience %}
+{% set gname = group.keys()[0] %}
+{% set jobs = group.values()[0] %}
+\subsection{{gname|br}}
+{% for job in jobs %}
+\cventry{{lb}}{{job.started|dateyear}}--{{job.finished|dateyear}}{{rb}}{{job.title|br}}{{job.organization|br}}{{job.location|br}}{}{
+\begin{itemize}
+{% for item in job.experience -%}
+\item {{item}}
+{% endfor -%} 
 \end{itemize}}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
-\subsection{Miscellaneous}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description}
+{% endfor %}
+{% endfor %}
+
+{% for stype, sitems in skills.items() %}
+\section{{stype|br}}
+{%- for sitem in sitems -%}
+\cvlistitem{{sitem|br}}
+{% endfor -%}
+{% endfor %}
 
 %% \section{Languages}
 %% \cvitemwithcomment{Language 1}{Skill level}{Comment}
 %% \cvitemwithcomment{Language 2}{Skill level}{Comment}
 %% \cvitemwithcomment{Language 3}{Skill level}{Comment}
 
-\section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+%% \section{Computer skills}
+%% \cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+%% \cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+%% \cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
 
 %% \section{Interests}
 %% \cvitem{hobby 1}{Description}
