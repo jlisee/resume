@@ -65,7 +65,7 @@
 
 \section{Education}
 {% for deg in education %}
-\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location|br}}{\textit{{deg.gpa|br}}}{}
+\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location.city|br}}{\textit{{deg.gpa|br}}}{}
 {% endfor %}
 
 % No {Description} at the end of education
@@ -81,11 +81,11 @@
 {% set jobs = group.values()[0] %}
 \subsection{{gname|br}}
 {% for job in jobs %}
-\cventry{{lb}}{{job.started|dateyear}}--{{job.finished|dateyear}}{{rb}}{{job.title|br}}{{job.organization|br}}{{job.location|br}}{}{
+\cventry{{lb}}{{job.started|dateyear}}--{{job.finished|dateyear}}{{rb}}{{job.title|br}}{{job.organization|br}}{{job.location.city|br}}{}{
 \begin{itemize}
 {% for item in job.experience -%}
 \item {{item}}
-{% endfor -%} 
+{% endfor -%}
 \end{itemize}}
 {% endfor %}
 {% endfor %}

@@ -3,9 +3,11 @@ personal:
     first: Joseph
     last: Lisee
   email: jlisee@gmail.com
-  homepage: www.josephlisee.com
+  homepage: josephlisee.com
   citizenship: US
-  city: Pittsburgh, PA
+  city: Pittsburgh
+  state: PA
+  country: USA
   portrait: portrait.png
   title: Robotics & Software Developer
 
@@ -13,23 +15,32 @@ personal:
 education:
   - type: gradate
     institution: Carnegie Mellon University
-    location: Pittsburgh, PA
+    location:
+      city: Pittsburgh
+      state: PA
+      country: USA
     gpa: 3.84
-    started: 2009-08-01
-    finished: 2011-05-25
+    started: 2009-08
+    finished: 2011-05
     degree: M.S. Robotics
 
   - type: undergradate
     institution: University of Maryland
-    location: College Park, MD
+    location:
+      city: College Park
+      state: MD
+      country: USA
     gpa: 3.70
-    started: 2004-08-25
-    finished: 2008-12-15
+    started: 2004-08
+    finished: 2008-12
     degree: B.S. Compter Science
 
   - type: undergradate
     institution: University of Maryland
-    location: College Park, MD
+    location:
+      city: College Park
+      state: MD
+      country: USA
     gpa: 3.70
     started: 2004-08
     finished: 2008-12
@@ -42,7 +53,10 @@ experience:
       title: Research Programmer
       started: 2011-07
       finished: Present
-      location: Pittsburgh, PA
+      location:
+        city: Pittsburgh
+        state: PA
+        country: USA
       experience:
         - Develop and maintain system level software and software infrastructure for robotic systems.
         - Optimization and performance analysis of distributed robotic autonomy software.
@@ -52,7 +66,10 @@ experience:
       title: Research Assistant
       started: 2009-08
       finished: 2011-07
-      location: Pittsburgh, PA
+      location:
+        city: Pittsburgh
+        state: PA
+        country: USA
       experience:
         - Implemented laser based navigation, mapping, and obstacle detection for an indoor mobile robot.
         - Developed low level software for error recovery and notification for a multi-robot sliding-autonomous system.
@@ -61,7 +78,10 @@ experience:
       title: Lead Software Engineer
       started: 2006-10
       finished: 2009-08
-      location: College Park, MD
+      location:
+        city: College Park
+        state: MD
+        country: USA
       experience:
         - First Place in 11th AUVSI AUV Competition against 25 other universities.
         - Managed a team of over 7 developers to build a code base running on Linux, Mac, and Windows with over 30,000 source lines of code.
@@ -72,7 +92,10 @@ experience:
       title: Intern
       started: 2008-07
       finished: 2008-08
-      location: Manassas, VA
+      location:
+        city: Manassas
+        state: VA
+        country: USA
       experience:
         - Designed and constructed an engineering control and test interface for an automated take off and landing system
         - Developed a test and configuration procedure for Novatel GPS hardware.
@@ -81,7 +104,10 @@ experience:
       title: Software Engineer
       started: 2005-03
       finished: 2009-08
-      location: College Park, MD
+      location:
+        city: College Park
+        state: MD
+        country: USA
       experience:
         - Designed and implemented a MVC based GUI system to allow sharing of graphical components among multiple robot control stations.
         -  Implemented operator control interfaces for multiple robotic systems to display real time vehicle telemetry and issue commands.
