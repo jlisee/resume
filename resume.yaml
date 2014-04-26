@@ -119,7 +119,7 @@ skills:
   - Programming Languages:
       type: category
       sections:
-        - Proficient:
+        - Advanced:
           - C++
           - C
           - Python
@@ -134,9 +134,9 @@ skills:
   - Platforms:
       type: comment
       sections:
-        - Linux: Main development platform, expertise from kernel drivers to full OS config..
-        - OS X: Primary C++ development experience.
-        - Windows: Experience porting C++ application.
+        - Linux: Main development platform, expertise from the kernel to full OS configuration.
+        - OS X: Primary C++ development platform experience.
+        - Windows: Experience porting C++ & pythonapplications.
 
   - Tools & Libraries:
       type: dense
@@ -145,6 +145,7 @@ skills:
           - Qt
           - wxWidgets
           - FLTK
+          - OpenGL
         - Platform:
           - Boost
         - Scientific:
