@@ -7,7 +7,12 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
 \moderncvstyle{casual}
-\moderncvcolor{red}
+
+% Define custom color
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.765, 0.082, 0.016}% red (medium: #C31504)
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+% Reference: moderncvcolor{red}
 
 % Turn off page numbers
 %\nopagenumbers{}
@@ -120,7 +125,8 @@
       {% set citems1 = row[0].values()[0] -%}
       {% set sname2 = row[1].keys()[0] -%}
       {% set citems2 = row[1].values()[0] -%}
-\cvdoubleitem{{sname1|br}}{{citems1|join(", ")|br}}{{sname2|br}}{{citems2|join(", ")|br}}
+\cvdoubleitem{{lb}}\itshape {{sname1}}{{rb}}{{citems1|join(", ")|br}}
+  {{lb}}\itshape {{sname2}}{{rb}}{{citems2|join(", ")|br}}
     {% endfor -%}
 
   {% endif %}
