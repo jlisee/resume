@@ -58,9 +58,10 @@ experience:
         state: PA
         country: USA
       experience:
-        - Develop and maintain system level software and software infrastructure for robotic systems.
-        - Optimization and performance analysis of distributed robotic autonomy software.
-        - Integration and data processing pipeline development for advance robotic sensors such as the Velodyne HDL-64E.
+        - Integrate, test, and validate fully autonous robotics software on new platforms.
+        - Develop and maintain system level software and infrastructure for robotic systems.
+        - Optimize and analyze the performance of distributed robotic autonomy software.
+        - Integrate and develope data processing pipeline development for advance sensors such as the Velodyne HDL-64E.
 
     - organization: Robotics Institute, Carnegie Mellon University
       title: Research Assistant
@@ -83,10 +84,10 @@ experience:
         state: MD
         country: USA
       experience:
-        - First Place in 11th AUVSI AUV Competition against 25 other universities.
+        - First Place team in 11th International AUVSI AUV Competition against 25 other universities.
         - Managed a team of over 7 developers to build a code base running on Linux, Mac, and Windows with over 30,000 source lines of code.
-        -  Designed an autonomous robotics software system that was hardware independent, allowing simulated vehicle runs and remote vehicle operations.
-        -  Implemented large portions of a 3D graphics, physics simulation and network framework to allow simulated vehicle testing and remote control.
+        - Designed an autonomous robotics software system that was hardware independent, allowing simulated vehicle runs and remote vehicle operations.
+        - Implemented large portions of a 3D graphics, physics simulation and network framework to allow simulated vehicle testing and remote control.
 
     - organization: Aurora Flight Sciences
       title: Intern
@@ -97,7 +98,7 @@ experience:
         state: VA
         country: USA
       experience:
-        - Designed and constructed an engineering control and test interface for an automated take off and landing system
+        - Designed and constructed an engineering control and test interface for an automated take off and landing system.
         - Developed a test and configuration procedure for Novatel GPS hardware.
 
     - organization: Space System Laboratory
@@ -110,49 +111,73 @@ experience:
         country: USA
       experience:
         - Designed and implemented a MVC based GUI system to allow sharing of graphical components among multiple robot control stations.
-        -  Implemented operator control interfaces for multiple robotic systems to display real time vehicle telemetry and issue commands.
+        - Implemented an operator control interfaces for multiple robotic systems to display real time vehicle telemetry and issue commands.
         - Created a CMake based build system, which improved developer productivity, build reliability, and allowed easier cross platform support.
 
 
 skills:
-  Robotics:
-    - Computer Vision
-    - Machine Learning
-    - LIDAR
+  - Programming Languages:
+      type: category
+      sections:
+        - Proficient:
+          - C++
+          - C
+          - Python
+        - Intermediate:
+          - Ruby
+          - Java
+        - Beginner:
+          - JavaScript
+          - Haskell
+          - OCaml
 
-  Computer Languges:
-    - C++
-    - Python
-    - Java
-    - Ruby
-    - Ocaml
+  - Platforms:
+      type: comment
+      sections:
+        - Linux: Main development platform, expertise from kernel drivers to full OS config..
+        - OS X: Primary C++ development experience.
+        - Windows: Experience porting C++ application.
 
-  Software:
-    - Infrastructure Software
-    - Distributed Systems
-    - Software Design
-    - Graphical User Interfaces
-    - Autonomous Software
+  - Tools & Libraries:
+      type: dense
+      sections:
+        - GUI:
+          - Qt
+          - wxWidgets
+          - FLTK
+        - Platform:
+          - Boost
+        - Scientific:
+          - MATLAB
+          - numpy
+          - matplotlib
+        - Build systems:
+          - CMake
+          - SCons
+        - Web:
+          - Django
+          - Trac
+        - VCS:
+          - Git
+          - Mercurial
+          - Subversion
+        - Ops:
+          - Salt Stack
+          - Fabric
 
-  Platforms:
-    - Linux
-    - Mac
-    - Windows (C++ experience on all)
+  - Robotics Skills:
+      - Computer Vision
+      - Machine Learning
+      - LIDAR
 
-  Tools:
-    - MATLAB
-    - Eclipse
-    - Subversion
-    - Trac
-    - Scons
-    - CMake
-
-  Libraries:
-    - Boost
-    - FLTK
-    - wxWidgets
+  - Software Skills:
+      - Infrastructure
+      - Distributed Systems
+      - Design & Architecture
+      - Graphical User Interfaces
+      - Autonomous Systems
 
 
 honors:
-  - Honors National Merit Scholar, Commended - 2004
+  - National Merit Scholar, Commended - 2004
   - Deans List Fall Semester - 2004 to 2008

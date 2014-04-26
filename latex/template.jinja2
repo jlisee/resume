@@ -90,12 +90,54 @@
 {% endfor %}
 {% endfor %}
 
-{% for stype, sitems in skills.items() %}
+{# Skills -#}
+{% for skill_set in skills %}
+{% set stype = skill_set.keys()[0] -%}
+{% set sitems = skill_set.values()[0] -%}
 \section{{stype|br}}
-{%- for sitem in sitems -%}
+{# To handle more complex sections we use "types" -#}
+{% if sitems.type is defined -%}
+  {% set sections = sitems.sections -%}
+
+  {% if sitems.type != 'dense' -%}
+
+    {%- for section in sections -%}
+      {% set sname = section.keys()[0] -%}
+      {% set citems = section.values()[0] -%}
+      {% if sitems.type == 'category' -%}
+\cvitemwithcomment{{sname|br}}{{citems|join(", ")|br}}{}
+      {% elif sitems.type == 'comment' -%}
+\cvitemwithcomment{}{{sname|br}}{{citems|br}}
+      {% else -%}
+\cvlistitem{Unknown type: {{sitems.type}} }
+      {%- endif -%}
+    {% endfor -%}
+
+  {% else %}
+
+    {%- for row in sections|batch(2, {'':[]}) -%}
+      {% set sname1 = row[0].keys()[0] -%}
+      {% set citems1 = row[0].values()[0] -%}
+      {% set sname2 = row[1].keys()[0] -%}
+      {% set citems2 = row[1].values()[0] -%}
+\cvdoubleitem{{sname1|br}}{{citems1|join(", ")|br}}{{sname2|br}}{{citems2|join(", ")|br}}
+    {% endfor -%}
+
+  {% endif %}
+{% else -%}
+  {%- for sitem in sitems -%}
 \cvlistitem{{sitem|br}}
+  {% endfor -%}
+{% endif -%}
 {% endfor -%}
-{% endfor %}
+
+{% if honors is defined %}
+{# Honors #}
+\section{Honors}
+{%- for honor in honors %}
+\cvlistitem{{honor|br}}
+{%- endfor %}
+{%- endif %}
 
 %% \section{Languages}
 %% \cvitemwithcomment{Language 1}{Skill level}{Comment}
