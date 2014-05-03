@@ -84,7 +84,9 @@
 {% for group in experience %}
 {% set gname = group.keys()[0] %}
 {% set jobs = group.values()[0] %}
+{% if gname|length > 0 %}
 \subsection{{gname|br}}
+{% endif -%}
 {% for job in jobs %}
 \cventry{{lb}}{{job.started|dateyear}}--{{job.finished|dateyear}}{{rb}}{{job.title|br}}{{job.organization|br}}{{job.location.city|br}}{}{
 \begin{itemize}
