@@ -169,7 +169,8 @@ skills:
   - Robotics Skills:
       - Computer Vision
       - Machine Learning
-      - LIDAR
+      # Make this more specific
+      #- LIDAR
 
   - Software Skills:
       - Infrastructure
