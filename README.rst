@@ -19,7 +19,11 @@ To build the resume:
 
 The PDF result will be in:
 
-    build/resume.pdf
+    build/<FirstName>_<LastName>_resume.pdf
+
+Content in "personal.yaml" in the root will be merged into the final
+resume, but ignored by Git.  This is a good place to put your phone
+number and full address.
 
 
 Todo
