@@ -9,6 +9,7 @@ __email__ = 'jlisee@gmail.com'
 
 # Python Imports
 import argparse
+import collections
 import datetime
 import os
 import re
@@ -90,6 +91,21 @@ def latex_escape(value):
 
     return "".join([LATEX_ESCAPES.get(char, char) for char in value])
 
+def merge_dicts(d, u):
+    """
+    Merge the two dictionaries together, reference:
+
+        http://stackoverflow.com/a/3233356/138948
+    """
+
+    for k, v in u.iteritems():
+        if isinstance(v, collections.Mapping):
+            r = merge_dicts(d.get(k, {}), v)
+            d[k] = r
+        else:
+            d[k] = u[k]
+    return d
+
 
 def main(argv = None):
     # Process args
@@ -101,14 +117,18 @@ def main(argv = None):
     parser.add_argument("template", help="The jinja template we are processing")
     parser.add_argument("output", help="Output file or directory")
     parser.add_argument("--extension", help="Extension of the output file")
+    parser.add_argument("--extra", nargs='*',
+                        help="Other YAML files to merge with default")
     args = parser.parse_args(argv[1:])
 
     # Data to use in templating
     data = yaml.load(open(args.data))
 
-    # TODO: make this an escaping an option
-    #for d in data:
-
+    # Merge in extra data
+    if args.extra:
+        for extra_path in args.extra:
+            extra = yaml.load(open(extra_path))
+            data = merge_dicts(data, extra)
 
     # Our actual template source
     template_path = args.template
