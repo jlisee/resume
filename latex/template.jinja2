@@ -33,8 +33,14 @@
 \name{{personal.name.first|br}}{{personal.name.last|br}}
 \title{{personal.title|br}}
 
-%\address{street and number}{postcode city}{country}
-%\phone[mobile]{+1~(234)~567~890}
+{% if personal.location is defined %}
+\address{{personal.location.street|default('')|br}}{{lb}}{{personal.location.city}}, {{personal.location.state}}{{rb}}{{personal.location.country|br}}
+{% endif %}
+
+{% if personal.mobile is defined %}
+\phone[mobile]{{personal.mobile|br}}
+{% endif %}
+
 %\phone[fixed]{+2~(345)~678~901}
 %\phone[fax]{+3~(456)~789~012}
 \email{{personal.email|br}}

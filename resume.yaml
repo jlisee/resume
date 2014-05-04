@@ -5,9 +5,10 @@ personal:
   email: jlisee@gmail.com
   homepage: josephlisee.com
   citizenship: US
-  city: Pittsburgh
-  state: PA
-  country: USA
+  location:
+    city: Pittsburgh
+    state: PA
+    country: USA
   portrait: portrait.png
   title: Robotics & Software Developer
 
