@@ -8,6 +8,7 @@ __author__ = 'Joseph Lisee'
 __email__ = 'jlisee@gmail.com'
 
 # Python Imports
+import argparse
 import datetime
 import os
 import re
@@ -95,15 +96,22 @@ def main(argv = None):
     if argv is None:
         argv = sys.argv
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument("data", help="The input data file")
+    parser.add_argument("template", help="The jinja template we are processing")
+    parser.add_argument("output", help="Output file or directory")
+    parser.add_argument("--extension", help="Extension of the output file")
+    args = parser.parse_args(argv[1:])
+
     # Data to use in templating
-    data = yaml.load(open(argv[1]))
+    data = yaml.load(open(args.data))
 
     # TODO: make this an escaping an option
     #for d in data:
 
 
     # Our actual template source
-    template_path = argv[2]
+    template_path = args.template
 
     # Use jinja2 to transform the data
     loader = jinja2.FileSystemLoader('/')
@@ -119,8 +127,22 @@ def main(argv = None):
     template = env.get_template(template_path)
     result = template.render(data)
 
+    # If the output path is directory auto-gen the name and use the given
+    # ending
+    if os.path.isdir(args.output):
+        if args.extension is None:
+            raise Exception("Error must supply extension with an output directory")
+        first_name = data['personal']['name']['first']
+        last_name = data['personal']['name']['last']
+        output_name = "%s_%s_resume.%s" % (first_name, last_name, args.extension)
+
+        output_path = os.path.join(args.output, output_name)
+
+    else:
+        output_path = args.output
+
     # Write our results
-    with open(argv[3], 'w') as f:
+    with open(output_path, 'w') as f:
         f.write(result)
 
 if __name__ == '__main__':

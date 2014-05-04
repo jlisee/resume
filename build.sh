@@ -30,9 +30,11 @@ cp $ROOT_DIR/resources/* $BUILD_DIR
 export PYTHONPATH=$ROOT_DIR:$DEPS_DIR/MarkupSafe:$DEPS_DIR/PyYAML/lib:$DEPS_DIR/jinja2:$PYTHONPATH
 
 python -m resugen.main \
+    --extension tex \
     $ROOT_DIR/resume.yaml \
     $ROOT_DIR/latex/template.jinja2 \
-    $BUILD_DIR/resume.tex
+    $BUILD_DIR
+
 
 # Build the result
 cd $BUILD_DIR
