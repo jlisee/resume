@@ -42,3 +42,11 @@ Notes about other programmer resume systems:
 * http://tex.stackexchange.com/questions/80/latex-template-for-resume-curriculum-vitae
 * https://news.ycombinator.com/item?id=3908844
 * http://sampleresumetemplate.net/
+
+Some other latex examples:
+
+https://github.com/deedydas/Deedy-Resume
+https://news.ycombinator.com/item?id=7672823
+
+http://jimplush.com/blog/article/177/This-may-be-the-best-resume-I-have-ever-seen
+https://news.ycombinator.com/item?id=2184024

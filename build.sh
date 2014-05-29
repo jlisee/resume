@@ -13,6 +13,13 @@ ROOT_DIR=$SCRIPT_DIR
 BUILD_DIR=$ROOT_DIR/build
 DEPS_DIR=$ROOT_DIR/deps
 
+# Parse arguments
+if [ "$#" -ne 1 ]; then
+    RESUME_FILE=$ROOT_DIR/jlisee.yaml
+else
+    RESUME_FILE=$1
+fi
+
 # Create the build directory if needed
 mkdir -p $BUILD_DIR
 
@@ -39,7 +46,7 @@ export PYTHONPATH=$ROOT_DIR:$DEPS_DIR/MarkupSafe:$DEPS_DIR/PyYAML/lib:$DEPS_DIR/
 
 python -m resugen.main \
     --extension tex \
-    $ROOT_DIR/resume.yaml \
+    $RESUME_FILE \
     $ROOT_DIR/latex/template.jinja2 \
     $BUILD_DIR \
     $EXTRA_ARGS
