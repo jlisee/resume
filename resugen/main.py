@@ -163,7 +163,7 @@ def main(argv = None):
 
     # Write our results
     with open(output_path, 'w') as f:
-        f.write(result)
+        f.write(result.encode('utf-8'))
 
 if __name__ == '__main__':
     sys.exit(main())
