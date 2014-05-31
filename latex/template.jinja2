@@ -30,7 +30,12 @@
 %\setlength{\makecvtitlenamewidth}{10cm}
 
 % personal data
-\name{{personal.name.first|br}}{{personal.name.last|br}}
+{% if personal.name.middle is defined -%}
+{% set namebegin = personal.name.first + ' ' + personal.name.middle -%}
+{% else -%}
+{% set namebegin = personal.name.first -%}
+{% endif -%}
+\name{{namebegin|br}}{{personal.name.last|br}}
 \title{{personal.title|br}}
 
 {% if personal.location is defined -%}
