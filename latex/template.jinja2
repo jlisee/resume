@@ -111,12 +111,16 @@
 {{job.title|br}}%
 {{job.organization|br}}%
 {{job.location.city|br}}{}%
+{% if job.experience|length > 0 -%}
 {
 \begin{itemize}
 {% for item in job.experience -%}
 \item {{item}}
 {% endfor -%}
 \end{itemize}}
+{% else -%}
+{}
+{% endif -%}
 {% endfor %}
 {% endfor %}
 
