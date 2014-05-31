@@ -46,11 +46,22 @@
 %\phone[fixed]{+2~(345)~678~901}
 %\phone[fax]{+3~(456)~789~012}
 \email{{personal.email|br}}
+
+{% if personal.homepage is defined -%}
 \homepage{{personal.homepage|br}}
+{% endif -%}
+
 % Optional social info
-%\social[linkedin]{john.doe}
-%\social[twitter]{jdoe}
-\social[github]{jlisee}
+{% if personal.linkedin is defined -%}
+\social[linkedin]{{personal.linkedin|br}}
+{% endif -%}
+{% if personal.twitter is defined -%}
+\social[twitter]{{personal.twitter|br}}
+{% endif -%}
+{% if personal.github is defined -%}
+\social[github]{{personal.github|br}}
+{% endif -%}
+
 % Optional extra info
 %\extrainfo{additional information}
 % First is picture height second if frame width
