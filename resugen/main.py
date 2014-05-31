@@ -44,6 +44,11 @@ def dateyear(value):
     """
     Return the year of the date.
     """
+
+    # Just bail out if we were given an undefinied value
+    if isinstance(value, jinja2.runtime.Undefined):
+        return ''
+
     date = obj2date(value)
 
     if date:
