@@ -152,6 +152,8 @@
 \cvitemwithcomment{{sname|br}}{{citems|join(", ")|br}}{}
       {% elif sitems.type == 'comment' -%}
 \cvitemwithcomment{}{{sname|br}}{{citems|br}}
+      {% elif sitems.type == 'plaincomment' -%}
+\cvitem{{sname|br}}{{citems|br}}
       {% else -%}
 \cvlistitem{Unknown type: {{sitems.type}} }
       {%- endif -%}
