@@ -99,7 +99,7 @@
 {% else -%}
 {% set gpa = '' -%}
 {% endif -%}
-\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location.city|br}}{{lb}}{{gpa}}{{rb}}{}
+\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location.city|br}}{{lb}}{{gpa}}{{rb}}{{deg.comment|br}}
 {% endfor %}
 
 % No {Description} at the end of education
