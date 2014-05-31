@@ -2,3 +2,4 @@ build/
 *.pyc
 *~
 personal.yaml
+personal_*.yaml

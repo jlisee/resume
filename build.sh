@@ -14,10 +14,15 @@ BUILD_DIR=$ROOT_DIR/build
 DEPS_DIR=$ROOT_DIR/deps
 
 # Parse arguments
-if [ "$#" -ne 1 ]; then
-    RESUME_FILE=$ROOT_DIR/jlisee.yaml
-else
+if [ "$#" -eq 1 ]; then
     RESUME_FILE=$1
+    EXTRA_FILE=$ROOT_DIR/personal.yaml
+elif [ "$#" -eq 2 ]; then
+    RESUME_FILE=$1
+    EXTRA_FILE=$2
+else
+    RESUME_FILE=$ROOT_DIR/jlisee.yaml
+    EXTRA_FILE=$ROOT_DIR/personal.yaml
 fi
 
 # Create the build directory if needed
@@ -34,7 +39,6 @@ cp $DEPS_DIR/latex-makefile/Makefile $BUILD_DIR
 cp $ROOT_DIR/resources/* $BUILD_DIR
 
 # Add in extra args if the personal file exists
-EXTRA_FILE=$ROOT_DIR/personal.yaml
 if [ -f $EXTRA_FILE ]; then
     EXTRA_ARGS="--extra $EXTRA_FILE"
 else
