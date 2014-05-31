@@ -94,7 +94,12 @@
 
 \section{Education}
 {% for deg in education %}
-\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location.city|br}}{\textit{{deg.gpa|br}}}{}
+{% if deg.gpa is defined -%}
+{% set gpa = '\\textit{' ~ deg.gpa ~ '}' -%}
+{% else -%}
+{% set gpa = '' -%}
+{% endif -%}
+\cventry{{lb}}{{deg.started|dateyear}}--{{deg.finished|dateyear}}{{rb}}{{deg.degree|br}}{{deg.institution|br}}{{deg.location.city|br}}{{lb}}{{gpa}}{{rb}}{}
 {% endfor %}
 
 % No {Description} at the end of education
