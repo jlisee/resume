@@ -38,6 +38,11 @@ cp $DEPS_DIR/latex-makefile/Makefile $BUILD_DIR
 # Move our resources into the build director
 cp $ROOT_DIR/resources/* $BUILD_DIR
 
+# Copy in the bib files if present
+if [ -d $ROOT_DIR/bib ]; then
+    cp $ROOT_DIR/bib/* $BUILD_DIR
+fi
+
 # Add in extra args if the personal file exists
 if [ -f $EXTRA_FILE ]; then
     EXTRA_ARGS="--extra $EXTRA_FILE"
