@@ -35,6 +35,13 @@ rm -rf $BUILD_DIR/*
 cp $DEPS_DIR/moderncv/*.{sty,cls} $BUILD_DIR
 cp $DEPS_DIR/latex-makefile/Makefile $BUILD_DIR
 
+# Install multibib
+cp $DEPS_DIR/multibib/multibib.{ins,dtx} $BUILD_DIR
+
+pushd $BUILD_DIR
+latex multibib.ins > /dev/null
+popd
+
 # Move our resources into the build director
 cp $ROOT_DIR/resources/* $BUILD_DIR
 
@@ -64,3 +71,28 @@ python -m resugen.main \
 # Build the result
 cd $BUILD_DIR
 make
+
+# This is needed for multibib
+
+# Process all the aux files that have bib data in them
+FOUND=0
+
+for f in `ls *.aux`; do
+ # do something on $f
+ if ! grep bibdata $f > /dev/null; then
+     # Ignore
+     true
+ else
+     echo
+     echo "Running bibtex on $f"
+     bibtex $f
+     FOUND=1
+ fi
+done
+
+# Now make again if we found bibtex files
+if [ "$FOUND" -eq 1 ]; then
+    echo
+    echo "Re-making because of bibtex files"
+    make
+fi
