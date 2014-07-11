@@ -1,0 +1,54 @@
+
+Abstract
+
+  The `multibib' package allows to create references to multiple
+  bibliographies within one document. It thus provides a complementary
+  functionality to packages like `bibunits' or `chapterbib', which allow
+  to create one bibliography for multiple, but different parts of the
+  document.
+
+
+To produce the style
+  
+  latex multibib.ins
+
+
+To produce the documentation
+
+  latex multibib.dtx
+
+  If you do not want to exclude the macro section from the documentation,
+  remove the comment sign before \OnlyDescription.
+
+  To produce an index for the documentation:
+
+    makeindex -s mbgind.ist multibib
+
+  To produce a change history for the documentation:
+  
+    makeindex -s mbgglo.ist -o multibib.gls multibib.glo
+
+
+Contents:
+
+  README          this file ;-)
+
+  multibib.dtx    documented source file for the multibib package
+  multibib.ins    installation file
+  multibib.pdf    documentation
+
+  mbgglo.ist      modification of gglo.ist to produce a change history for
+                    the documentation of multibib  
+  mbgind.ist      modification of gind.ist to produce an index for
+                    the documentation of multibib
+  
+  bibtexall       shell script to run bibtex on each .aux file in the 
+                     present directory
+  mbplain.bst     modification of plain.bst to be used together with multibib
+  mbunsrtdin.bst  modification of unsrtdin.bst to be used together with multibib
+ 
+
+
+Happy TeXing
+
+    Thorsten Hansen, Thorsten.Hansen@psychol.uni-giessen.de
