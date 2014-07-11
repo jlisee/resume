@@ -9,9 +9,25 @@
 \moderncvstyle{casual}
 
 % Define custom color
-\definecolor{color0}{rgb}{0,0,0}% black
-\definecolor{color1}{rgb}{0.765, 0.082, 0.016}% red (medium: #C31504)
-\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+{% if personal.color is defined -%}
+{% if personal.color.main is defined -%}
+{% set c = personal.color.main -%}
+\definecolor{color0}{rgb}{ {{c[0]}}, {{c[1]}}, {{c[2]}} }
+{% endif %}
+{% if personal.color.primary is defined -%}
+{% set c = personal.color.primary -%}
+\definecolor{color1}{rgb}{ {{c[0]}}, {{c[1]}}, {{c[2]}} }
+%{0.046, 0.494, 0.0}
+{% endif %}
+{% if personal.color.secondary is defined -%}
+{% set c = personal.color.secondary -%}
+\definecolor{color2}{rgb}{ {{c[0]}}, {{c[1]}}, {{c[2]}} }
+% {0.45,0.45,0.45}
+{% endif %}
+{% else %}
+\moderncvcolor{red}
+{% endif %}
+
 % Reference: moderncvcolor{red}
 
 % Turn off page numbers
