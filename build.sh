@@ -45,6 +45,9 @@ popd
 # Move our resources into the build director
 cp $ROOT_DIR/resources/* $BUILD_DIR
 
+# Move our custom bibtex style
+cp $ROOT_DIR/latex/fnameunsrt.bst $BUILD_DIR
+
 # Copy in the bib files if present
 if [ -d $ROOT_DIR/bib ]; then
     cp $ROOT_DIR/bib/* $BUILD_DIR

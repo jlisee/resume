@@ -30,8 +30,16 @@
 
 % Reference: moderncvcolor{red}
 
+% Pull in xstring for our macro
+\usepackage{xstring}
+
 % Pull in multibib
 \usepackage{multibib}
+
+% Define the function which formats our name bold in bib output
+\def\FormatName#1{{lb}}%
+  \IfSubStr{{lb}}#1}{{personal.name.last|br}}{\textbf{{lb}}#1}}{{lb}}#1}%
+}
 
 % Define multibib citations with descriptions
 \newcites{{lb}}%
