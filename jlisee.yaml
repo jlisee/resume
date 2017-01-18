@@ -47,10 +47,25 @@ education:
 
 experience:
   - "":
+    - organization: Uber Advanced Technologies Group
+      title: Senior Software Engineer
+      started: 2015-03
+      finished: Present
+      location:
+        city: Pittsburgh
+        state: PA
+        country: USA
+      experience:
+        - Create a customized linux OS to facilitate stable operation and rapid self driving vehicle development.
+        - Develop a CAN software interface, message IDL, and reverse engineer vehicl telemetry.
+        - Implement core automation, lint, build, packaging, and deployment tooling a full stack autonomy system.
+        - Extend, overhual, and provide operational and customer support for a 3D data labeling system.
+        - Lead work on high performance robotics data visualization software to enable rapid debugging and development of a self driving vehicle software.
+
     - organization: National Robotics Engineering Center
       title: Research Programmer
       started: 2011-07
-      finished: Present
+      finished: 2015-02
       location:
         city: Pittsburgh
         state: PA
@@ -134,7 +149,7 @@ skills:
       sections:
         - Linux: Main development platform, expertise from the kernel to full OS configuration.
         - OS X: Primary C++ development platform experience.
-        - Windows: Experience porting C++ & pythonapplications.
+        - Windows: Experience porting C++ & python applications.
 
   - Tools & Libraries:
       type: dense
@@ -153,9 +168,10 @@ skills:
         - Build systems:
           - CMake
           - SCons
+          - Bazel
         - Web:
           - Django
-          - Trac
+          - Flask
         - VCS:
           - Git
           - Mercurial
