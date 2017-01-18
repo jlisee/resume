@@ -10,6 +10,17 @@ and a shell script.  Eventually the goal will allow for multiple
 generation formats without having to re-write the content.
 
 
+Dependencies
+-------------
+
+On Ubuntu 16.04:
+
+ - texlive
+ - texlive-latex-extra
+ - make
+ - python2.7
+
+
 How To
 -------
 
