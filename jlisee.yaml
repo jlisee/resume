@@ -48,9 +48,36 @@ education:
 experience:
   - "":
     - organization: Uber Advanced Technologies Group
-      title: Senior Software Engineer
-      started: 2015-03
+      title: Senior Software Engineer II
+      started: 2019-03
       finished: Present
+      location:
+        city: Pittsburgh
+        state: PA
+        country: USA
+      experience:
+        - Technical lead for building out a web first robotics development system
+        - Built out backend and frontend technology for a web based robotics visualization
+        - Mentored and help hire new engineers to expend teams scope and impact
+
+    - organization: Uber Advanced Technologies Group
+      title: Senior Software Engineer
+      started: 2016-03
+      finished: 2019-03
+      location:
+        city: Pittsburgh
+        state: PA
+        country: USA
+      experience:
+        - Technical lead for team developing web based robotics visualization software
+        - Maintained and improved ATG's primary Qt and OpenGL based robotics visualization and debugging system
+        - Developed the XVIZ open source autonomy visualization protocol to facilitate web based robotics visualization
+        - Helped launched the AVS open source project consisting of XVIZ and Streetscapegl
+
+    - organization: Uber Advanced Technologies Group
+      title: Software Engineer II
+      started: 2015-03
+      finished: 2016-06
       location:
         city: Pittsburgh
         state: PA
@@ -60,7 +87,6 @@ experience:
         - Develop a CAN software interface, message IDL, and reverse engineer vehicl telemetry.
         - Implement core automation, lint, build, packaging, and deployment tooling a full stack autonomy system.
         - Extend, overhual, and provide operational and customer support for a 3D data labeling system.
-        - Lead work on high performance robotics data visualization software to enable rapid debugging and development of a self driving vehicle software.
 
     - organization: National Robotics Engineering Center
       title: Research Programmer
@@ -137,10 +163,10 @@ skills:
           - C
           - Python
         - Intermediate:
+          - JavaScript
           - Ruby
           - Java
         - Beginner:
-          - JavaScript
           - Haskell
           - OCaml
 
@@ -156,11 +182,11 @@ skills:
       sections:
         - GUI:
           - Qt
+          - OpenGL
           - wxWidgets
           - FLTK
-          - OpenGL
-        - Platform:
-          - Boost
+        - Platforms:
+          - AWS
         - Scientific:
           - MATLAB
           - numpy
@@ -170,6 +196,7 @@ skills:
           - SCons
           - Bazel
         - Web:
+          - React
           - Django
           - Flask
         - VCS:
@@ -177,20 +204,21 @@ skills:
           - Mercurial
           - Subversion
         - Ops:
+          - Docker
           - Salt Stack
           - Fabric
 
   - Robotics Skills:
+      - Visualization
       - Computer Vision
       - Machine Learning
-      # Make this more specific
-      #- LIDAR
+      - Sensor Integration
 
   - Software Skills:
       - Infrastructure
+      - Graphical User Interfaces
       - Distributed Systems
       - Design & Architecture
-      - Graphical User Interfaces
       - Autonomous Systems
 
 
