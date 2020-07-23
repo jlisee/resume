@@ -167,7 +167,16 @@ Not used}
 {
 \begin{itemize}
 {% for item in job.experience -%}
+{% if item is mapping -%}
+\item {{item|subhead}}
+\begin{itemize}
+{% for subitem in item|subitems -%}
+\item {{subitem}}
+{% endfor -%}
+\end{itemize}
+{% else -%}
 \item {{item}}
+{% endif -%}
 {% endfor -%}
 \end{itemize}}
 {% else -%}

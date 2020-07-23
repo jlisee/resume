@@ -71,6 +71,36 @@ def obj2date(value):
 
     return value
 
+
+def subhead(mapping):
+    """
+    Takes:
+
+    foo:
+     - sub 1
+     - sub 2
+
+    And returns "foo"
+    """
+    keys = mapping.keys()
+    assert len(keys) == 1
+    return keys[0]
+
+
+
+def subitems(mapping):
+    """
+    Takes:
+
+    foo:
+     - sub 1
+     - sub 2
+
+    And returns ["sub 1", "sub 2"]
+    """
+    return mapping[subhead(mapping)]
+
+
 # Helper table for latex escape
 LATEX_ESCAPES = {
     '&' : r'\&',
@@ -147,6 +177,8 @@ def main(argv = None):
         'br' : brace,
         'dateyear' : dateyear,
         'lesc' : latex_escape,
+        'subhead' : subhead,
+        'subitems' : subitems,
         })
 
     template = env.get_template(template_path)
