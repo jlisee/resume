@@ -49,16 +49,29 @@ experience:
   - "":
     - organization: Uber Advanced Technologies Group
       title: Senior Software Engineer II
-      started: 2019-03
+      started: 2019-11
       finished: Present
       location:
         city: Pittsburgh
         state: PA
         country: USA
       experience:
-        - Technical lead for building out a web first robotics development system
+        - Lead engineer for the ATG's developer experience team
+        - Forged a Bazel monorepo supporting hundreds of active engineers and commits per day
+        - Focused on measuring and removing constraints to accelerate CI and local developer workflows
+        
+    - organization: Uber Advanced Technologies Group
+      title: Senior Software Engineer II
+      started: 2019-03
+      finished: 2019-10
+      location:
+        city: Pittsburgh
+        state: PA
+        country: USA
+      experience:
+        - Technical lead building out a web first robotics development system
         - Built out backend and frontend technology for a web based robotics visualization
-        - Mentored and help hire new engineers to expend teams scope and impact
+        - Mentored and help hire new engineers to expand teams scope and impact
 
     - organization: Uber Advanced Technologies Group
       title: Senior Software Engineer
