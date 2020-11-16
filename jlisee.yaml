@@ -173,9 +173,10 @@ skills:
       sections:
         - Advanced:
           - C++
-          - C
           - Python
+          - C
         - Intermediate:
+          - Go
           - JavaScript
           - Ruby
           - Java
@@ -187,7 +188,7 @@ skills:
       type: comment
       sections:
         - Linux: Main development platform, expertise from the kernel to full OS configuration.
-        - OS X: Primary C++ development platform experience.
+        - OS X: Daily driver laptop OS, used for all things development and work
         - Windows: Experience porting C++ & python applications.
 
   - Tools & Libraries:
@@ -200,14 +201,16 @@ skills:
           - FLTK
         - Platforms:
           - AWS
+          - Buildkite
+          - GitHub
         - Scientific:
           - MATLAB
           - numpy
           - matplotlib
         - Build systems:
+          - Bazel
           - CMake
           - SCons
-          - Bazel
         - Web:
           - React
           - Django
@@ -218,8 +221,8 @@ skills:
           - Subversion
         - Ops:
           - Docker
+          - Terraform
           - Salt Stack
-          - Fabric
 
   - Robotics Skills:
       - Visualization
