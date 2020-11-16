@@ -57,8 +57,8 @@ experience:
         country: USA
       experience:
         - Lead engineer for the ATG's developer experience team
-        - Forged a Bazel monorepo supporting hundreds of active engineers and commits per day
-        - Focused on measuring and removing constraints to accelerate CI and local developer workflows
+        - Helped scale a monorepo to hundreds of 100's of active engineers, with 100's commits per day, and thousands of tests
+        - Focused on measuring and removing constraints in CI, static analysis, testing, and local development
         
     - organization: Uber Advanced Technologies Group
       title: Senior Software Engineer II
